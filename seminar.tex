@@ -1,4 +1,5 @@
-% Angepasste Seminarvorlage
+%
+% Angepasste FOM Seminarvorlage
 %
 \documentclass[12pt,a4paper]{scrartcl}
 
@@ -8,7 +9,7 @@
 \usepackage{graphicx}				% Einbinden von Bildern
 \usepackage{hyperref}				% Klickbare Verweise und \autoref{label}
 \usepackage{nomencl}
-\renewcommand{\familydefault}{\sfdefault}
+\usepackage{setspace}
 \usepackage{geometry}
  \geometry{
  a4paper,
@@ -17,14 +18,14 @@
  top=40mm,
  bottom=20mm,
  }
-\usepackage{setspace}
- 
+\renewcommand{\familydefault}{\sfdefault}
+
 %
 %	Hier werden Titel, Bearbeiter und das Datum eingetragen
 %
 \newcommand\svthema{Multi-Cluster Management für Containerumgebungen}
 \newcommand\svperson{Christian Frank (\#473088)}
-\newcommand\svdatum{\today} % \today für das aktuelle Datum, sonst als Text eintragen
+\newcommand\svdatum{\today}
 \newcommand\lvname{Wirtschaftsinformatik: IT-Infrastruktur}
 \newcommand\lvtyp{WS 2019}
 \newcommand\lvinst{FOM - Hochschule für Oekonomie \& Management}
@@ -40,12 +41,10 @@ pdfauthor={\svperson}
 	
 \begin{document}
 
-% Hier wird der Titel-Bereich formatiert
-% Die zuvor definierten Textbausteine werden hier verwendet.
+% Titel
 \title{ \huge\textbf{\svthema} }
 \author{ {\svperson} \\ \svdatum }
 \date{ \normalsize \centering \includegraphics[width=0.3\textwidth]{FOM}\\ {\lvname} \\ {\lvbetr} \\ {\lvinst} \\ {\lvtyp} }
-% eigene Veraenderung- FOM Logo mit eingefügt auf dem Deckblatt
 
 % Seitennummer oben
 \pagestyle{fancy}
@@ -65,14 +64,14 @@ For a possible solution we'll look at Rancher from Rancher Inc., a solution that
 
 \cleardoublepage
 
-\tableofcontents			% Inhaltsverzeichnis ... nicht für kurze Dokumente!
+\tableofcontents			% Inhaltsverzeichnis
 \cleardoublepage
 
-\listoffigures				% Abbildungsverzeichnis ... nicht für kurze Dokumente
+\listoffigures				% Abbildungsverzeichnis
 \cleardoublepage
 
 \input{glossary.tex}
-\printnomenclature
+\printnomenclature          % Abkuerzungsverzeichnis
 \cleardoublepage
 
 \pagenumbering{arabic}
@@ -88,7 +87,7 @@ For a possible solution we'll look at Rancher from Rancher Inc., a solution that
 
 \input{kapitel5.tex}
 
-% Das Literaturverzeichnis
+% Literaturverzeichnis
 \cleardoublepage
 \bibliographystyle{IEEEtran}	% ieeetran verwenden, damit auch URLs angezeigt werden
 \bibliography{seminar-lit}
