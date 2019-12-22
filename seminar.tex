@@ -1,18 +1,24 @@
 % Angepasste Seminarvorlage
 %
-\documentclass[12pt,a4paper,fancyheader]{scrartcl}
+\documentclass[12pt,a4paper]{scrartcl}
 
 \usepackage[english]{babel}			% englische Namen/Umlaute
 \usepackage[utf8]{inputenc}	    	% Zeichensatzkodierung
 \usepackage{fancyhdr}
 \usepackage{graphicx}				% Einbinden von Bildern
-\usepackage{color}					% Farben wenn es sein muß
 \usepackage{hyperref}				% Klickbare Verweise und \autoref{label}
-\usepackage{booktabs}				% "Schöne" Tabellen
-\usepackage{amsmath}				% Mathematischer Formelsatz AMS
-\usepackage{amsfonts}
+\usepackage{nomencl}
 \renewcommand{\familydefault}{\sfdefault}
-
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ left=40mm,
+ right=20mm,
+ top=40mm,
+ bottom=20mm,
+ }
+\usepackage{setspace}
+ 
 %
 %	Hier werden Titel, Bearbeiter und das Datum eingetragen
 %
@@ -24,11 +30,11 @@
 \newcommand\lvinst{FOM - Hochschule für Oekonomie \& Management}
 \newcommand\lvbetr{Dipl.-Wirtschaftsinf. (FH) Frank Rudolf Becker}
 
-% Das ist ein 100 Wörter umfassender Blindtext, um das Aussehen von längeren Texten zu testen.
-\newcommand{\blindtext}{\textit{Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.}}
+% Das ist ein 100 Woerter umfassender Blindtext, um das Aussehen von längeren Texten zu testen.
+\newcommand{\blindtext}{Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.}
 
 \hypersetup{ % Thema und Author in die Meta-Daten der PDF
-pdftitle={FOM Seminar paper: \svthema} 
+pdftitle={\svthema}, 
 pdfauthor={\svperson}
 }	
 	
@@ -39,10 +45,16 @@ pdfauthor={\svperson}
 \title{ \huge\textbf{\svthema} }
 \author{ {\svperson} \\ \svdatum }
 \date{ \normalsize \centering \includegraphics[width=0.3\textwidth]{FOM}\\ {\lvname} \\ {\lvbetr} \\ {\lvinst} \\ {\lvtyp} }
-%eigene Veränderung- FOM Logo mit eingefügt auf dem Deckblatt
+% eigene Veraenderung- FOM Logo mit eingefügt auf dem Deckblatt
+
+% Seitennummer oben
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhf[ch]{\thepage}
+\renewcommand\headrulewidth{0pt}
 
 \maketitle
-\thispagestyle{empty} % lässt die Seitennummer auf der Titelseite verschwinden
+\thispagestyle{empty} % laesst die Seitennummer auf der Titelseite verschwinden
 \pagenumbering{Roman}
 
 \begin{abstract}
@@ -52,10 +64,17 @@ For a possible solution we'll look at Rancher from Rancher Inc., a solution that
 \end{abstract}
 
 \cleardoublepage
+
 \tableofcontents			% Inhaltsverzeichnis ... nicht für kurze Dokumente!
 \cleardoublepage
+
 \listoffigures				% Abbildungsverzeichnis ... nicht für kurze Dokumente
 \cleardoublepage
+
+\input{glossary.tex}
+\printnomenclature
+\cleardoublepage
+
 \pagenumbering{arabic}
 \setcounter{page}{4}
 
@@ -63,6 +82,11 @@ For a possible solution we'll look at Rancher from Rancher Inc., a solution that
 
 \input{kapitel2.tex}
 
+\input{kapitel3.tex}
+
+\input{kapitel4.tex}
+
+\input{kapitel5.tex}
 
 % Das Literaturverzeichnis
 \cleardoublepage
