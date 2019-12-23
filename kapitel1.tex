@@ -3,9 +3,29 @@
 %
 
 \pagebreak
-\section{Introduction to Container Orchestration Frameworks}
+\section{Introduction to Cloud Computing and Container Orchestration Frameworks}
 
 \onehalfspacing
 
-\blindtext
+\subsection{Enterprise IT}
 
+2019, in Enterprise IT, Cloud Computing is the new norm\footnote{Vgl. \textit{Gartner (2019)}: Cloud computing is the new norm \cite{gartnerCloudStatement}} according to Gartner Research, and is expected to grow even further\footnote{Vgl. \textit{Gartner (2019)}: Gartner Forecasts Worldwide Public Cloud Revenue \cite{gartnerForecast}}
+
+After a decade of virtualization, cloud computing now focuses on Containerization
+
+Enterprise virtualization with a self-service portal is not cloud computing
+
+\subsection{Container Run-time}
+
+Docker pioneered the single node container run-time
+
+To orchestrate more than one node, you'll need an orchestration framework; here are the most popular:
+\begin{itemize}
+\item Docker Swarm
+\item Kubernetes
+\item Mesos DC/OS
+\end{itemize}
+
+After Mirantis acquired the Docker Enterprise business, it announced the end of life for Docker Swarm\footnote{Vgl. \textit{Mirantis (2019)}: What We Announced Today and Why it Matters \cite{mirantisDocker}}; Mesos DC/OS never gathered a large following, so now only Kubernetes remains as an container orchestration framework with a sizeable installed base.
+
+In this text we'll have a look at the challenges posed by introducing a Container Orchestration Framework into Enterprise IT and showcase a possible solution.

@@ -10,6 +10,7 @@
 \usepackage{hyperref}				% Klickbare Verweise und \autoref{label}
 \usepackage{nomencl}
 \usepackage{setspace}
+\usepackage{parskip}
 \usepackage{geometry}
  \geometry{
  a4paper,
@@ -30,9 +31,6 @@
 \newcommand\lvtyp{WS 2019}
 \newcommand\lvinst{FOM - Hochschule für Oekonomie \& Management}
 \newcommand\lvbetr{Dipl.-Wirtschaftsinf. (FH) Frank Rudolf Becker}
-
-% Das ist ein 100 Woerter umfassender Blindtext, um das Aussehen von längeren Texten zu testen.
-\newcommand{\blindtext}{Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.}
 
 \hypersetup{ % Thema und Author in die Meta-Daten der PDF
 pdftitle={\svthema}, 
@@ -58,7 +56,7 @@ pdfauthor={\svperson}
 
 \begin{abstract}
 In this paper we'll first have a look at container technologies and orchestration frameworks. After introducing the most popular orchestration framework, Kubernetes, we'll look at challenges for Enterprises to manage multiple Kubernetes clusters.
-For a possible solution we'll look at Rancher from Rancher Inc., a solution that offers very interesting features to manage multiple clusters. In closing we'll look at coming developments in container deployments.
+For a possible solution we'll look at Rancher from Rancher Inc., a solution that offers very interesting features to manage multiple clusters. In closing we'll look at coming developments in container environments.
 
 \end{abstract}
 
@@ -89,6 +87,7 @@ For a possible solution we'll look at Rancher from Rancher Inc., a solution that
 
 % Literaturverzeichnis
 \cleardoublepage
+\raggedright
 \bibliographystyle{IEEEtran}	% ieeetran verwenden, damit auch URLs angezeigt werden
 \bibliography{seminar-lit}
 \end{document}

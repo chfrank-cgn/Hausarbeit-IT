@@ -7,11 +7,27 @@
 
 \onehalfspacing
 
+\subsection{Cloud Computing}
 According to the National Institute of Standards and Technology (NIST), the key characteristics of cloud computing are 
 \begin{itemize}
 \item On-demand self-service
 \item Broad network access
 \item Resource pooling
 \item Rapid elasticity
-\item Measured service \footnote{Vgl. \textit{Mell, Peter (2011)}: NIST Special Publication 800-145 \cite{sp800-145}}
+\item Measured service\footnote{Vgl. \textit{Mell, Peter (2011)}: The NIST Definition of Cloud Computing \cite{sp800-145}}
 \end{itemize}
+
+Gartner defines Cloud Computing in a similar way, as "Cloud computing is a style of computing in which scalable and elastic IT-enabled capabilities are delivered as a service using internet technologies."\footnote{\textit{Gartner (2019)}: Gartner Glossary - Cloud Computing \cite{gartnerGlossary}}
+
+Sitting on top of the Docker\footnote{Vgl. \textit{Docker (2019)}: Enterprise Container Platform \cite{docker}} container run-time, Kubernetes\footnote{Vgl. \textit{The Linux Foundation (2019)}: Production-Grade Container Orchestration \cite{kubernetes}} enables Cloud Computing on Public Cloud as well as for in-house data centers.
+
+\subsection{Kubernetes Concepts}
+
+The key concepts of Kubernetes are:
+\begin{itemize}
+\item Pod
+\item Replica Set
+\item Deployment
+\end{itemize}
+
+Kubernetes consists of a cluster of systems, separated into Master nodes (Control Plane) and Worker nodes (Execution Plane)
