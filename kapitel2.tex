@@ -7,8 +7,12 @@
 
 \onehalfspacing
 
-\subsection{Cloud Computing}
-According to the National Institute of Standards and Technology (NIST), the key characteristics of cloud computing are 
+\subsection{Kubernetes and Cloud Computing}
+
+What exactly is Kubernetes? "Kubernetes (K8s) is an open-source system for automating deployment, scaling, and management of containerized applications.
+It groups containers that make up an application into logical units for easy management and discovery. Kubernetes builds upon 15 years of experience of running production workloads at Google, combined with best-of-breed ideas and practices from the community."\footnote{\textit{The Linux Foundation (2019)}: Production-Grade Container Orchestration \cite{kubernetes}}
+
+In addition, according to the National Institute of Standards and Technology (NIST), the key characteristics of cloud computing are: 
 \begin{itemize}
 \item On-demand self-service
 \item Broad network access
@@ -19,7 +23,7 @@ According to the National Institute of Standards and Technology (NIST), the key 
 
 Gartner defines Cloud Computing in a similar way, as "Cloud computing is a style of computing in which scalable and elastic IT-enabled capabilities are delivered as a service using internet technologies."\footnote{\textit{Gartner (2019)}: Gartner Glossary - Cloud Computing \cite{gartnerGlossary}}
 
-Sitting on top of the Docker\footnote{Vgl. \textit{Docker (2019)}: Enterprise Container Platform \cite{docker}} container run-time, Kubernetes\footnote{Vgl. \textit{The Linux Foundation (2019)}: Production-Grade Container Orchestration \cite{kubernetes}} enables Cloud Computing on Public Cloud as well as for in-house data centers.
+Sitting on top of the Docker container run-time, Kubernetes is thus the ideal tool to enable cloud computing on Public Cloud as well as for in-house data centers.
 
 \subsection{Kubernetes Concepts}
 
@@ -27,7 +31,22 @@ The key concepts of Kubernetes are:
 \begin{itemize}
 \item Pod
 \item Replica Set
+\item Service
 \item Deployment
 \end{itemize}
 
-Kubernetes consists of a cluster of systems, separated into Master nodes (Control Plane) and Worker nodes (Execution Plane)
+A Pod in Kubernetes is the smallest unit that can be deployed (ephemeral primitive). A Pod consist of one or more containers that are always scheduled together on the same node. Each pod is given a unique IP address and containers in a pod can speak to each other via localhost
+
+A Replica Set defines the desired scale and state of a group of pods. Replica sets are not used directly, however the resource needs to be understood as it is the based building block for building applications on Kubernetes. Replica sets can (when instructed to) scale up or down the number of pods which are desired.
+
+A Services Defines a DNS name that can be used to refer to a group of pods; the service thus provides a consistent endpoint for that group of pods and aids service discovery. There are different types of services: nodePort, clusterIP, and loadbalancer
+
+A Deployment is the level of abstraction above replica sets; deployments create and update replica sets and allow to easily scale applications and perform rolling upgrades, if needed.
+
+\subsection{Kubernetes Architecture}
+
+Kubernetes consists of one or more systems, that are grouped into a cluster.
+
+A cluster consists of at least one Master node, the so called Control Plane, and one or more Worker nodes, the Execution Plane.
+
+The control plane takes care of orchestrating the application deployments and maintains their state, the worker nodes execute the actual application pods.
