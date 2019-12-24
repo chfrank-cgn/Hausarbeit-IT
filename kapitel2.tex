@@ -45,8 +45,10 @@ A Deployment is the level of abstraction above replica sets; deployments create 
 
 \subsection{Kubernetes Architecture}
 
-Kubernetes consists of one or more systems, that are grouped into a cluster.
+Generally speaking, Kubernetes consists of one or more systems, that are grouped into a cluster. These systems can be either physical nodes, or better, be virtualized.
 
 A cluster consists of at least one Master node, the so called Control Plane, and one or more Worker nodes, the Execution Plane.
 
-The control plane takes care of orchestrating the application deployments and maintains their state, the worker nodes execute the actual application pods.
+The control plane takes care of orchestrating the application deployments and maintains their state, the worker nodes execute the actual application pods as defined and scheduled by the control plane.
+
+All access to a Kubernetes cluster is through the master nodes and the Kubernetes API endpoints it provides.
