@@ -18,12 +18,14 @@ In addition, according to the National Institute of Standards and Technology (NI
 \item Broad network access
 \item Resource pooling
 \item Rapid elasticity
-\item Measured service\footnote{Vgl. \textit{Mell, Peter (2011)}: The NIST Definition of Cloud Computing \cite{sp800-145}}
+\item Measured service\footnote{Vgl. \textit{Mell, P. (2011)}: The NIST Definition of Cloud Computing \cite{sp800-145}}
 \end{itemize}
 
 Gartner defines Cloud Computing in a similar way, as "Cloud computing is a style of computing in which scalable and elastic IT-enabled capabilities are delivered as a service using internet technologies."\footnote{\textit{Gartner (2019)}: Gartner Glossary - Cloud Computing \cite{gartnerGlossary}}
 
-Sitting on top of the Docker container run-time, Kubernetes is thus the ideal tool to enable cloud computing on Public Cloud as well as for in-house data centers.
+Sitting on top of the Docker container run-time, Kubernetes is the ideal tool to enable cloud computing on Public Cloud as well as for in-house data centers.
+
+Kubernetest is being widely adopted, not only in the commercials space, but also the military. "It’s a flexible but universal development platform for software teams across the military and prevents vendor-lock in."\footnote{\textit{Chaillan, N. (2019)}: How the U.S. Air Force Deployed Kubernetes \cite{airForce}} Nicolas Chaillan explained during his presentation on why the US Air Force chose Kubernetes for their F-16 fighter jets.
 
 \subsection{Kubernetes Concepts}
 
@@ -39,16 +41,16 @@ A Pod in Kubernetes is the smallest unit that can be deployed (ephemeral primiti
 
 A Replica Set defines the desired scale and state of a group of pods. Replica sets are not used directly, however the resource needs to be understood as it is the based building block for building applications on Kubernetes. Replica sets can (when instructed to) scale up or down the number of pods which are desired.
 
-A Services Defines a DNS name that can be used to refer to a group of pods; the service thus provides a consistent endpoint for that group of pods and aids service discovery. There are different types of services: nodePort, clusterIP, and loadbalancer
+A Services Defines a DNS name that can be used to refer to a group of pods; the service thus provides a consistent endpoint for that group of pods and aids service discovery. There are different types of services (nodePort, clusterIP, and loadbalancer), a more detailed explanation would exceed the scope of this text.
 
 A Deployment is the level of abstraction above replica sets; deployments create and update replica sets and allow to easily scale applications and perform rolling upgrades, if needed.
 
 \subsection{Kubernetes Architecture}
 
-Generally speaking, Kubernetes consists of one or more systems, that are grouped into a cluster. These systems can be either physical nodes, or better, be virtualized.
+Generally speaking, a Kubernetes cluster consists of one or more systems, grouped together. These systems can be either physical nodes, or better, be virtualized.
 
-A cluster consists of at least one Master node, the so called Control Plane, and one or more Worker nodes, the Execution Plane.
+A cluster consists of at least one Master node, the so called Control Plane, and one or more Worker nodes, the Execution Plane. Most commonly, three nodes are being used for the control plane, and three or more nodes for the execution plane, sometimes with different sizing or capabilities.
 
 The control plane takes care of orchestrating the application deployments and maintains their state, the worker nodes execute the actual application pods as defined and scheduled by the control plane.
 
-All access to a Kubernetes cluster is through the master nodes and the Kubernetes API endpoints it provides.
+All access to a Kubernetes cluster is through the master nodes and the Kubernetes API endpoints it provides. Kubernetes provides a command-line interface tool, kubectl, for this; a detailed description can be found the Kubernetes online documentation\footnote{Vgl. \textit{The Linux Foundation (2019)}: Overview of kubectl \cite{kubectl}}.
