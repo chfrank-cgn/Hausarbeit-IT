@@ -6,7 +6,8 @@
 \usepackage[english]{babel}			% englische Namen/Umlaute
 \usepackage[utf8]{inputenc}	    	% Zeichensatzkodierung
 \usepackage{fancyhdr}
-\usepackage{graphicx}				% Einbinden von Bildern
+\usepackage{graphicx}               % Einbinden von Bildern
+\usepackage{hyperxmp}
 \usepackage{hyperref}				% Klickbare Verweise und \autoref{label}
 \usepackage{nomencl}
 \usepackage{setspace}
@@ -33,10 +34,15 @@
 \newcommand\lvbetr{Dipl.-Wirtschaftsinf. (FH) Frank Rudolf Becker}
 
 \hypersetup{ % Thema und Author in die Meta-Daten der PDF
-pdftitle={\svthema}, 
-pdfauthor={\svperson}
-}	
-	
+  pdftitle={\svthema}, 
+  pdfauthor={\svperson},
+  pdfcopyright={This work is licensed under the Creative Commons Attribution 4.0 International License},
+  pdflicenseurl={http://creativecommons.org/licenses/by/4.0/}
+  pdfinfo={
+    Copyright={This work is licensed under the Creative Commons Attribution 4.0 International License.To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.}
+  }
+}
+
 \begin{document}
 
 % Titel
@@ -59,6 +65,14 @@ In this paper we'll first have a look at container technologies and orchestratio
 For a possible solution we'll look at Rancher from Rancher Inc., a solution that offers very interesting features to manage multiple clusters. In closing we'll look at coming developments in container environments.
 
 \end{abstract}
+
+\vfill
+\begin{figure}[h]
+    \centering
+    \includegraphics[]{CC-BY}
+\end{figure}
+
+This work is licensed under the Creative Commons Attribution 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
 \cleardoublepage
 

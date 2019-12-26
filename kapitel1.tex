@@ -11,13 +11,13 @@
 
 Ever since the start of the decade, Enterprise IT has undergone a massive transformation towards a utility-like service business. As of 2019, in Enterprise IT, Cloud Computing is now the new norm\footnote{Vgl. \textit{Gartner (2019)}: Cloud computing is the new norm \cite{gartnerCloudStatement}} according to Gartner Research, and is expected to grow even further\footnote{Vgl. \textit{Gartner (2019)}: Gartner Forecasts Worldwide Public Cloud Revenue \cite{gartnerForecast}}
 
-In the early days, compute transformation was focused on virtualization, whereas cloud computing now focuses on containerization. Both technologies are actually quite old, virtualization started in the early 70s, pioneered by IBM, with VM/CMS; the first attempt at containerization was made with the implementation of chroot() for Unix System V in the late 70s.
+In the early days, compute transformation was focused on virtualization, whereas cloud computing now focuses on containerization. Both technologies are quite old, virtualization started in the early 70s, pioneered by IBM, with VM/CMS; the first attempt at containerization was made with the implementation of chroot() for Unix System V in the late 70s.
 
-Outside of the mainframe world virtualization technologies were not widespread until VMware commoditized virtualization with ESX/ESXi in the early 00s. Around virtualization a new ecosystem of self service portals appeared, such as HP's Cloud Service Automation. Enterprise virtualization with a self-service portal is not cloud computing though - for cloud computing to really come to life, the first real open-source cloud operation system, OpenStack was needed, together with the arrival of the major public cloud providers (Amazon Web Service, Microsoft Azure, Google Cloud, Alibaba Cloud).
+Outside of the mainframe world virtualization technologies were not widespread until VMware commoditized virtualization with ESX/ESXi in the early 00s. Around virtualization, a new ecosystem of self-service portals appeared, such as HP's Cloud Service Automation. Enterprise virtualization with a self-service portal is not cloud computing though - for cloud computing to come to life, the first real open-source cloud operation system, OpenStack was needed, together with the arrival of the major public cloud providers (Amazon Web Service, Microsoft Azure, Google Cloud, Alibaba Cloud).
 
 \subsection{Container Run-time}
 
-At that time, Docker\footnote{Vgl. \textit{Docker (2019)}: Enterprise Container Platform \cite{docker}} pioneered the first simple orchestration environment to run containers, on a single node at first. Whereas virtualization is focused on virtual compute instances, containerization is focused on application delivery and deployment; with immutable images and a focus on automation it fully supports the development of cloud native\footnote{Vgl. \textit{Wiggins, A. (2017)}: The Twelve-Factor App \cite{12factor}} applications.
+At that time, Docker\footnote{Vgl. \textit{Docker (2019)}: Enterprise Container Platform \cite{docker}} pioneered the first simple orchestration environment to run containers, on a single node at first. Whereas virtualization is focused on virtual compute instances, containerization is focused on application delivery and deployment; with immutable images and a focus on automation, it fully supports the development of cloud native\footnote{Vgl. \textit{Wiggins, A. (2017)}: The Twelve-Factor App \cite{12factor}} applications.
 
 Docker evolved and spawned other container run-timer environments, such as containerd and podman, but they all remained focused on executing on a single node. To orchestrate containers on more than one node, an orchestration framework is needed. 
 
@@ -30,4 +30,4 @@ Here are the most popular in 2019:
 
 After Mirantis acquired the Docker Enterprise business, it announced the end of life for Docker Swarm\footnote{Vgl. \textit{Mirantis (2019)}: What We Announced Today and Why it Matters \cite{mirantisDocker}}; Mesos DC/OS never gathered a large following, so as of the time of writing, Kubernetes remains as the only container orchestration framework with a sizeable installed base and being under active development.
 
-In this paper we'll have a look at one of the challenges posed by introducing Kubernetes as a container orchestration framework into Enterprise IT and showcase a possible solution.
+In this paper, we'll have a look at one of the challenges posed by introducing Kubernetes as a container orchestration framework into Enterprise IT and showcase a possible solution.
