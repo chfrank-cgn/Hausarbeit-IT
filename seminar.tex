@@ -1,26 +1,24 @@
 %
 % Angepasste FOM Seminarvorlage
 %
-\documentclass[12pt,a4paper]{scrartcl}
+\documentclass[12pt,a4paper,listof=totoc,bibliography=totoc]{scrartcl}
 
 \usepackage[english]{babel}			% englische Namen/Umlaute
 \usepackage[utf8]{inputenc}	    	% Zeichensatzkodierung
 \usepackage{fancyhdr}
 \usepackage{graphicx}               % Einbinden von Bildern
-\usepackage{hyperxmp}
-\usepackage{hyperref}				% Klickbare Verweise und \autoref{label}
-\usepackage{nomencl}
+\usepackage[hidelinks]{hyperref}	% Klickbare Verweise und \autoref{label}
+\usepackage[intoc]{nomencl}
 \usepackage{setspace}
 \usepackage{parskip}
+\usepackage{caption}
 \usepackage{geometry}
- \geometry{
- a4paper,
- left=40mm,
- right=20mm,
- top=40mm,
- bottom=20mm,
- }
+ \geometry{a4paper, left=40mm, right=20mm, top=40mm, bottom=20mm}
 \renewcommand{\familydefault}{\sfdefault}
+
+% Bildueberschrift oben und rechtsbuendig
+\captionsetup[figure]{labelfont=bf, textfont=bf}
+\captionsetup{justification=raggedright,singlelinecheck=false}
 
 %
 %	Hier werden Titel, Bearbeiter und das Datum eingetragen
@@ -35,12 +33,9 @@
 
 \hypersetup{ % Thema und Author in die Meta-Daten der PDF
   pdftitle={\svthema}, 
-  pdfauthor={\svperson},
-  pdfcopyright={This work is licensed under the Creative Commons Attribution 4.0 International License},
-  pdflicenseurl={http://creativecommons.org/licenses/by/4.0/}
-  pdfinfo={
-    Copyright={This work is licensed under the Creative Commons Attribution 4.0 International License.To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.}
-  }
+  pdfauthor={Christian Frank},
+  pdfsubject={Exploring Rancher to manage multi-cluster Kubernetes environments in Enterprise IT},
+  pdfkeywords={Rancher, Kubernetes, Multi-Cluster Management}
 }
 
 \begin{document}

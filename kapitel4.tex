@@ -9,7 +9,7 @@
 
 \subsection{Rancher overview}
 
-Rancher provides a solution to manage multiple Kubernetes clusters in Enterprise IT, all from an user-friendly GUI
+Rancher provides a solution to centrally manage multiple Kubernetes clusters in Enterprise IT, all from an user-friendly GUI
 
 Rancher was recognized in 2019 as a Firestarter\footnote{Vgl. \textit{Rancher Labs (2019)}: Rancher Labs Recognized by 451 Research as a ‘451 Firestarter’ \cite{firestarter451}} in Gartner's annual technology award program.
 
@@ -17,24 +17,12 @@ The Rancher Dashboard for an active Kubernetes cluster looks like this:
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=\linewidth]{images/dashboard}
 \caption {Rancher Dashboard}
+\includegraphics[width=\linewidth]{images/dashboard}
 \label{fig:rancherDashboard}
 \end{figure}
 
-This cluster was created on Azure, note the enabled monitoring 
-
-\subsection{Cluster Management}
-
-Central cluster management and installation
-
-Central version control and upgrades
-
-Central Logging and Monitoring
-
-Automatic backup 
-
-Cluster, Node and Credential templates
+This cluster was created on Azure, with cluster monitoring enabled.
 
 \subsection{User Management}
 
@@ -50,6 +38,18 @@ Central cluster hardening\footnote{Vgl. \textit{Rancher Labs (2019)}: Hardening 
 
 Central secret management
 
+\subsection{Cluster Management}
+
+Central cluster management and installation
+
+Central version control and upgrades
+
+Central Logging and Monitoring
+
+Automatic backup 
+
+Cluster, Node and Credential templates
+
 \subsection{Applications and CI/CD}
 
 Integrated Service Mesh
@@ -59,6 +59,8 @@ Integrated pipeline
 Integration with Helm
 
 Application catalogs
+
+Storage volumes and classes
 
 \subsection{Infrastructure as Code}
 
