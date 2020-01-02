@@ -36,7 +36,7 @@ Also, as we're observing a trend in Enterprise IT to move from traditional perim
 
 \subsection{The principle of least privilege}
 
-The second crucial component of security is user authentication and authorization; especially with the shift to identity-based security, Enterprise IT needs to establish to establish a trusted identity provider and link it to its container platform.
+The second crucial component of security is user authentication and authorization; especially with the shift to identity-based security, Enterprise IT needs to establish a trusted identity provider and link it to its container platform.
 
 Many Enterprise IT already have some form of central user authentication, through Microsoft Active Directory or any other Single-Sign-On provider. Kubernetes has built-in Role-Based Access Control and can restrict access to its resources based on the roles bound to a specific user or object.
 
@@ -54,16 +54,19 @@ Without such changes, from experience, the likelihood of failing the transformat
 
 \subsection{Day Two operations with multiple Kubernetai}
 
-Once all preparations have been completed, the organizational structure is about to change and multiple clusters are installed, there are a lot of configuration items and actions that need to be synchronized across all clusters:
+Once all preparations have been completed, the organizational structure is about to change and multiple clusters are installed, there are a lot of configuration items and actions that need to be synchronized across all clusters.
 
-\begin{itemize}
-\item Authentication and Authorization, Roles and Responsibilities
-\item Security Policies for Cluster, Pod, and Network
-\item Cluster application version control and upgrades
-\item Logging and Monitoring
-\item Backup and Restore
-\item Persistent volumes and storage classes
-\end{itemize}
+Central user authentication and authorization is key. Authentication can be performed through an identity provider, but roles and responsibilities need to be defined for each cluster, and users need to be assigned the roles for authorization. There's only one hierarchy level on Kubernetes, roles can be bound to user objects and become effective in one or more namespaces.
+
+Kubernetes provides two types of security policies, one for pod security and one for network security. Pod security policies, as the name implies, govern security-relevant aspects of pod specification,\footnote{See \textit{The Linux Foundation (2019)}: Pod Security Policies. \cite{podSecurity}} whereas network policies govern the allowed communication in between groups of pods and the outside world.\footnote{See \textit{The Linux Foundation (2019)}: Network Policies. \cite{netSecurity}}
+
+As time goes on, supporting applications will need to be updated and Kubernetes itself might need to be updated unless Kubernetes is managed by a public cloud provider.
+
+To effectively control a Kubernetes cluster and aid in troubleshooting, logging and monitoring should to be configured and enabled.
+
+The configuration and metadata information of all deployments in a given Kubernetes cluster is stored in a distributed etcd database. This information state needs to be regularly backed up, and in case of issues, be restored.
+
+To provide for data persistence, volumes and shared file systems need to be created for various Kubernetes clusters.
 
 For software development and automatic deployment, it makes sense to connect the development pipeline(s) to the respective clusters, have a central image registry and establish central governance for deployment workflows.
 
@@ -71,7 +74,7 @@ For micro-service observability, distributed tracing and network control, a serv
 
 All of these tasks can, of course, be performed against individual clusters with native Kubernetes tools, but once there are a couple of clusters to manage, this will get tedious and quite difficult to synchronize.
 
-It will even get more difficult, once IaC enters the picture and Kubernetes clusters are starting to become ephemeral and the run-time environment will be recreated fresh with each new application deployment, fully relying on automation to implement governance and policies.
+It will even get more difficult, once IaC enters the picture and Kubernetes clusters are starting to become ephemeral with the run-time environment recreated fresh with each new application deployment, fully relying on automation to implement governance and policies.
 
 \subsection{Possible solutions}
 
@@ -79,4 +82,4 @@ To address all these issues, CNCF is working on Kubernetes federation and multi-
 
 The three big cloud providers also provide solutions to manage multiple clusters: Google Cloud has Anthos,\footnote{See \textit{Google (2019)}: Anthos - Bringing the cloud to you. \cite{googleAnthos}} Microsoft Azure has Azure Arc in Preview,\footnote{See \textit{Microsoft (2019)}: Bring Azure services and management to any infrastructure. \cite{azureArc}} and AWS is working on AWS Outposts.\footnote{See \textit{AWS (2019)}: AWS Outposts. \cite{awsOutposts}}
 
-A popular open-source solution for this problem is Rancher, by Rancher Labs.\footnote{See \textit{Rancher Labs (2019)}: Run Kubernetes Everywhere. \cite{rancher}} In the next chapter, we'll have a look at whether Rancher could provide a solution to Kubernetes multi-cluster management and become the management tool of choice in Enterprise IT.
+A popular open-source solution for this problem is Rancher, by Rancher Labs. In the next chapter, we'll have a look at whether Rancher could provide a solution to Kubernetes multi-cluster management and how it would address the issues outlined above.

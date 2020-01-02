@@ -51,6 +51,7 @@ The key terms and concepts in Kubernetes are:
 \item Replica Set
 \item Service
 \item Deployment
+\item Namespace
 \end{itemize}
 
 A Pod in Kubernetes is the smallest unit that can be deployed (ephemeral primitive). A Pod consists of one or more containers that are always scheduled together on the same node. Each pod is given a unique IP address and containers in a pod can speak to each other via localhost
@@ -60,5 +61,7 @@ A Replica Set defines the desired scale and state of a group of pods. Replica se
 A Service defines a DNS name that can be used to refer to a group of pods; the service thus provides a consistent endpoint for that group of pods and aids service discovery. There are different types of services (nodePort, clusterIP, and load balancer), a more detailed explanation would exceed the scope of this paper.
 
 A Deployment is the level of abstraction above replica sets; deployments create and update replica sets and allow to easily scale applications up or down, and perform rolling upgrades if needed. Deployments can also include volume claims for data persistence.
+
+A Namespace is an organizational unit defined within Kubernetes that can group deployments together and is used to grant access permissions.
 
 All these items above are defined in plain-text YAML files, which can be kept, together with the application source code, in the central version control system. It is important to note that, except for the actual cluster nodes, all infrastructure definitions (compute, network, storage) have thus moved into the realm and responsibility of the application development teams.
