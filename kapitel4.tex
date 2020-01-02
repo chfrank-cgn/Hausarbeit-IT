@@ -72,7 +72,7 @@ As of the latest Rancher version (2.3.3), the VMware node driver now supports dy
 
 Clusters provisioned and installed through Rancher can also be upgraded through the Rancher GUI with a single click. Once a new version has been selected, Rancher will perform a rolling upgrade of all master and worker nodes, without application downtime.
 
-For application management, Rancher interacts with the popular package manager Helm.\footnote{See \textit{CNCF (2019)}: The package manager for Kubernetes. \cite{helm}} Helm is also used as the base installation mechanism for Rancher's integrated application catalogs, which can be extended.
+For application management, Rancher interacts with the popular package manager Helm.\footnote{See \textit{CNCF (2019)}: Helm 3 - The package manager for Kubernetes. \cite{helm}} Helm is also used as the base installation mechanism for Rancher's integrated application catalogs, which can be extended.
 
 Helm, directly or through the catalogs, provides version control and upgrades for application deployments.
 
@@ -84,7 +84,7 @@ If so desired, Rancher can install and configure a Prometheus monitoring instanc
 
 \subsection{Backup and restore}
 
-Configuration and state of a Kubernetes cluster are stored in one distributed key-value store. For clusters provisioned by Rancher, Rancher can provide regularly scheduled backups of this database, either locally or to an S3-compliant object store; Rancher also offers the functionality to restore such snapshots from the GUI.
+Configuration and state of a Kubernetes cluster are stored in a distributed key-value store. For clusters provisioned by Rancher, Rancher can provide regularly scheduled backups of this database, either locally or to an S3-compliant object store; Rancher also offers the functionality to restore such snapshots from the GUI.
 
 \subsection{Persistent volumes}
 
@@ -98,13 +98,13 @@ Rancher does not offer backup and restore services for these volumes, though.
 
 For application development, Rancher has the ability to install and configure a complete CI/CD pipeline from the GUI on a given cluster; this pipeline is based on Jenkins and can connect to all major source-code revision control systems.
 
-Good software development practice calls for credentials to be stored apart from source code in so-called secrets. Kubernetes has a built-in secret store and so has Rancher, with significantly higher encryption and improved access control.
+Good software development practice calls for credentials to be stored apart from source code. Kubernetes offers secrets as objects for this purpose and has a built-in secret store. Rancher also has a built-in secret store, with significantly higher encryption and improved access control.
 
 It is also good practice to separate code and configuration. Kubernetes provides config map objects for this purpose and Rancher allows the creation and configuration of config maps from the GUI.
 
 \subsection{Service Mesh integration}
 
-Installation and configuration of a service mesh can be a daunting task. With Rancher 2.3 an automated service mesh installation of Istio, with automatic injection, is now included in the GUI.
+Installation and configuration of a service mesh can be a daunting task. With Rancher 2.3 an automated installation of a service mesh based on Istio, with automatic injection, is now included in the GUI.
 
 It should be noted though, that Istio is quite resource-hungry and should only be deployed on clusters with ample spare capacity.
 
